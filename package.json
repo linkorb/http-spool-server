@@ -1,0 +1,27 @@
+{
+  "name": "http-spool-server",
+  "version": "0.1.0",
+  "description": "HTTP Spool Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r dotenv/config server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linkorb/http-spool-server.git"
+  },
+  "author": "LinkORB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linkorb/http-spool-server/issues"
+  },
+  "homepage": "https://github.com/linkorb/http-spool-server#readme",
+  "devDependencies": {
+    "dotenv": "^8.0.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuid": "^3.3.2"
+  }
+}
