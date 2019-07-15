@@ -19,6 +19,9 @@ jobs:
       - run:
           name: Publish Docker Image to Harbor
           command: docker push $IMAGE_NAME:latest
+      - run:
+          name: Update service on Swarm cluster
+          command: curl -X POST $UPDATE_HOOK
 workflows:
   version: 2
   build-master:
