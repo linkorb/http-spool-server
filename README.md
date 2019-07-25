@@ -19,6 +19,7 @@ Variable                 | Description
 -------------------------|----------------------------------
 PROXY_PORT               | Proxy server port
 QUEUE_PORT               | Job queue server port
+WORKER_QUEUE_ENDPOINT    | HTTP(s) endpoint for the worker to access the queue
 
 3. Start the servers:
 
@@ -60,5 +61,5 @@ You can run a simple test worker that fetches last job from queue
 and responses to `/jobs/{jobId}/response` endpoint:
 
 ```sh
-  node samples/worker
+  npm run worker
 ```
