@@ -1,5 +1,6 @@
 const uuid = require('uuid/v1');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const queue = [];
 const activeConnections = [];
@@ -10,8 +11,10 @@ const queueServer = express();
 const proxyPort = process.env.PROXY_PORT;
 const queuePort = process.env.QUEUE_PORT;
 
-proxyServer.use(express.json());
-queueServer.use(express.json());
+const BODY_LIMIT = process.env.BODY_LIMIT || 50;
+
+proxyServer.use(bodyParser.json({ limit: `${BODY_LIMIT}mb` }));
+queueServer.use(bodyParser.json({ limit: `${BODY_LIMIT}mb` }));
 
 proxyServer.all('*', pushJob);
 

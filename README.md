@@ -20,6 +20,7 @@ Variable                 | Description
 PROXY_PORT               | Proxy server port
 QUEUE_PORT               | Job queue server port
 WORKER_QUEUE_ENDPOINT    | HTTP(s) endpoint for the worker to access the queue
+BODY_LIMIT               | Body size limit (MB)
 
 3. Start the servers:
 
