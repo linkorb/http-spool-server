@@ -1,6 +1,6 @@
 FROM node:10
 WORKDIR /usr/src/app
-ADD package*.json ./
+COPY package*.json ./
 RUN npm install --only=production
 COPY . .
 EXPOSE 4000
