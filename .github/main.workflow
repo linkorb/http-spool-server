@@ -1,9 +1,16 @@
 workflow "hadolint action" {
-  on = "pull_request"
-  resolves = ["hadolint on pr"]
+  resolves = ["hadolint on push"]
+  on = "push"
 }
 
 action "hadolint on pr" {
+  uses = "burdzwastaken/hadolint-action@master"
+  env = {
+    HADOLINT_ACTION_DOCKERFILE_FOLDER = "."
+  }
+}
+
+action "hadolint on push" {
   uses = "burdzwastaken/hadolint-action@master"
   env = {
     HADOLINT_ACTION_DOCKERFILE_FOLDER = "."
